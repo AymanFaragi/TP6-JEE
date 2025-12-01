@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Catalogue Produits</title>
+</h:head>
+<h:body>
+
+    <h2>Catalogue Produits (JSF + EJB)</h2>
+
+    <h3>Ajouter un produit</h3>
+    <h:form>
+        <h:outputLabel value="Nom : "/>
+        <h:inputText value="#{catalogue.nom}" /><br/><br/>
+        <h:outputLabel value="Prix : "/>
+        <h:inputText value="#{catalogue.prix}" /><br/><br/>
+        <h:commandButton value="Ajouter" action="#{catalogue.addProduit}" />
+    </h:form>
+
+    <hr/>
+
+    <h3>Rechercher par mot cle</h3>
+    <h:form>
+        <h:outputLabel value="Mot cle : "/>
+        <h:inputText value="#{catalogue.motcle}" />
+        <h:commandButton value="Rechercher" action="#{catalogue.searchProduits}" />
+    </h:form>
+
+    <hr/>
+
+    <h3>Afficher tous les produits</h3>
+    <h:form>
+        <h:commandButton value="Afficher" action="#{catalogue.listProduits}" />
+    </h:form>
+
+    <hr/>
+
+    <h3>Supprimer un produit</h3>
+    <h:form>
+        <h:outputLabel value="ID produit : "/>
+        <h:inputText value="#{catalogue.id}" />
+        <h:commandButton value="Supprimer" action="#{catalogue.deleteProduit}" />
+    </h:form>
+
+    <hr/>
+
+    <h3>Modifier un produit</h3>
+    <h:form>
+        <h:outputLabel value="ID : "/>
+        <h:inputText value="#{catalogue.id}" /><br/>
+        <h:outputLabel value="Nouveau nom : "/>
+        <h:inputText value="#{catalogue.nom}" /><br/>
+        <h:outputLabel value="Nouveau prix : "/>
+        <h:inputText value="#{catalogue.prix}" /><br/>
+        <h:commandButton value="Mettre a jour" action="#{catalogue.updateProduit}" />
+    </h:form>
+
+    <hr/>
+
+    <h3>Resultats</h3>
+    <h:outputText value="#{catalogue.result}" escape="false" />
+
+</h:body>
+</html>
