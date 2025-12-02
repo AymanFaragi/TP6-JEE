@@ -4,19 +4,24 @@
       xmlns:f="jakarta.faces.core">
 <h:head>
     <title>Catalogue Produits</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </h:head>
 <h:body>
-
+    <div class="centering">
+        <div class="blur-background">
+            <h:form>
+                <h:outputLabel value="ID : "/>
+                <h:inputText value="#{catalogue.id}" > <f:validator validatorId="nomValidator"/> </h:inputText> <br/>
+                <h:outputLabel value="Nouveau nom : "/>
+                <h:inputText value="#{catalogue.nom}" /><br/>
+                <h:outputLabel value="Nouveau prix : "/>
+                <h:inputText value="#{catalogue.prix}" > <f:validateDoubleRange minimum="0" /></h:inputText><br/>
+                <h:commandButton value="Mettre a jour" action="#{catalogue.updateProduit}" />
+            </h:form>
+        </div>
+    </div>
     <h3>Modifier un produit</h3>
-    <h:form>
-        <h:outputLabel value="ID : "/>
-        <h:inputText value="#{catalogue.id}" > <f:validator validatorId="nomValidator"/> </h:inputText> <br/>
-        <h:outputLabel value="Nouveau nom : "/>
-        <h:inputText value="#{catalogue.nom}" /><br/>
-        <h:outputLabel value="Nouveau prix : "/>
-        <h:inputText value="#{catalogue.prix}" > <f:validateDoubleRange minimum="0" /></h:inputText><br/>
-        <h:commandButton value="Mettre a jour" action="#{catalogue.updateProduit}" />
-    </h:form>
+
 
     <h3>Resultats</h3>
     <h:outputText value="#{catalogue.result}" escape="false" />

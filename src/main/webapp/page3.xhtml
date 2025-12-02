@@ -3,16 +3,22 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 <h:head>
     <title>Catalogue Produits</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </h:head>
 <h:body>
+    <div class="centering">
+        <div class="blur-background">
+            <h3>Supprimer un produit</h3>
+            <h:form>
+                <h:outputLabel value="ID produit : "/>
+                <h:inputText value="#{catalogue.id}" />
+                <h:commandButton value="Supprimer" action="#{catalogue.deleteProduit}" />
+                <h:commandButton value="Modification Page" action="navigation34" />
+            </h:form>
+        </div>
+    </div>
 
-    <h3>Supprimer un produit</h3>
-    <h:form>
-        <h:outputLabel value="ID produit : "/>
-        <h:inputText value="#{catalogue.id}" />
-        <h:commandButton value="Supprimer" action="#{catalogue.deleteProduit}" />
-        <h:commandButton value="Modification Page" action="navigation34" />
-    </h:form>
+
 
 
     <h3>Resultats</h3>

@@ -3,6 +3,41 @@ body {
     margin: 20px;
 }
 
+.centering{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.blur-background{
+    background-color: #ffa5a5;
+    backdrop-filter: blur(20px);
+    border: 1px black solid;
+    border-radius: 10px ;
+    padding: 20px;
+    display: flex;
+    justify-content: center ;
+    width: 300px;
+}
+.input-style{
+    background-color: #ffd2d2;
+    border-radius: 5px;
+    width: 80%;
+}
+.input-style:focus{
+    background-color: #ffffff;
+    border: red 1px solid;
+}
+.input-style:hover{
+    background-color: #ffffff;
+}
+
+.button-style{
+    margin-left: 10px;
+    background-color: #ffd2d2;
+    padding: 5px;
+    border: #fa7272 solid;
+    border-radius: 10px;
+}
 
 
 

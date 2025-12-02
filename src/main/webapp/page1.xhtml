@@ -8,14 +8,20 @@
 </h:head>
 <h:body>
     <h3>Ajouter un produit</h3>
-    <h:form>
-        <h:outputLabel value="Nom : "/>
-        <h:inputText value="#{catalogue.nom}"> <f:validator validatorId="nomValidator"/> </h:inputText>><br/><br/>
-        <h:outputLabel value="Prix : "/>
-        <h:inputText value="#{catalogue.prix}" ><f:validateDoubleRange minimum="0" /> </h:inputText> <br/><br/>
-        <h:commandButton value="Ajouter" action="#{catalogue.addProduit}" />
-        <h:commandButton value="page de recherche" action="#{catalogue.goToSearch}" />
-    </h:form>
+    <div class="centering">
+        <div class="blur-background">
+            <h:form>
+                <h:outputLabel value="Nom : "/>
+                <h:inputText value="#{catalogue.nom}" styleClass="input-style"> <f:validator validatorId="nomValidator"/> </h:inputText><br/><br/>
+                <h:outputLabel value="Prix : "/>
+                <h:inputText value="#{catalogue.prix}" styleClass="input-style"><f:validateDoubleRange minimum="0"/> </h:inputText> <br/><br/>
+                <h:commandButton value="Ajouter" action="#{catalogue.addProduit}" styleClass="button-style"/>
+                <h:commandButton value="page de recherche" action="#{catalogue.goToSearch}" styleClass="button-style"/>
+            </h:form>
+        </div>
+    </div>
+
+
 
 
     <h3>Resultats</h3>
