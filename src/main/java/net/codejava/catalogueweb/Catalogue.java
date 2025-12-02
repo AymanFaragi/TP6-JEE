@@ -1,6 +1,8 @@
 package net.codejava.catalogueweb;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 import jakarta.ejb.EJB;
 import net.codejava.catalogueejb.ICatalogueRemote;
@@ -39,7 +41,7 @@ public class Catalogue implements Serializable {
     public void addProduit() {
         if (nom != null && prix != null) {
             metier.addProduit(new Produit(nom, prix));
-            result = "<p>Produit ajoute avec succes.</p>";
+            result = "<p>Produit ajoute avec succes</p>";
         }
     }
 
@@ -58,7 +60,7 @@ public class Catalogue implements Serializable {
     public void deleteProduit() {
         if (id != null) {
             metier.removeProduit(id);
-            result = "<p>Produit supprime.</p>";
+            result = "<p>Produit supprime</p>";
         }
     }
 
@@ -67,7 +69,7 @@ public class Catalogue implements Serializable {
             Produit p = new Produit(nom, prix);
             p.setId(id);
             metier.updateProduit(p);
-            result = "<p>Produit modifie.</p>";
+            result = "<p>Produit modifie</p>";
         }
     }
 
@@ -85,5 +87,23 @@ public class Catalogue implements Serializable {
         }
         sb.append("</table>");
         return sb.toString();
+    }
+    public String goToSearch() {
+
+        List<Produit> produits = metier.getAllProduits();
+
+        if (produits == null || produits.isEmpty()) {
+            FacesMessage msg = new FacesMessage(
+                    FacesMessage.SEVERITY_ERROR,
+                    "Impossible de naviguer: aucun produit dans le catalogue",
+                    null
+            );
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+
+            return null;
+        }
+
+
+        return "page2?faces-redirect=true";
     }
 }

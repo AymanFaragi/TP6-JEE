@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+<h:head>
+    <title>Catalogue Produits</title>
+</h:head>
+<h:body>
+
+    <h2>Rechercher par mot cle</h2>
+
+    <h:form>
+        <h:outputLabel value="Mot cle : "/>
+        <h:inputText value="#{catalogue.motcle}"> <f:validator validatorId="nomValidator"/> </h:inputText>
+        <h:commandButton value="Rechercher" action="#{catalogue.searchProduits}" />
+
+    </h:form>
+    <h3>Afficher tous les produits</h3>
+    <h:form>
+        <h:commandButton value="Afficher" action="#{catalogue.listProduits}" />
+        <h:commandButton value="Suppression D'un produit" action="page3" />
+    </h:form>
+
+
+    <h3>Resultats</h3>
+    <h:outputText value="#{catalogue.result}" escape="false" />
+</h:body>
+</html>

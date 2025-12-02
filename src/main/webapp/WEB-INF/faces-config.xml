@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+        xmlns="jakarta.faces.config"
+        version="4.0">
+
+    <navigation-rule>
+        <from-view-id>/page3.xhtml</from-view-id>
+
+        <navigation-case>
+            <from-outcome>navigation34</from-outcome>
+            <to-view-id>/page4.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>
