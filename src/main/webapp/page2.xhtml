@@ -7,13 +7,14 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 </h:head>
 <h:body>
+    <h2>Rechercher par mot cle</h2>
     <div class="centering">
     <div class="blur-background">
+
         <h:form>
-            <h2>Rechercher par mot cle</h2>
             <h:outputLabel value="Mot cle : "/>
-            <h:inputText value="#{catalogue.motcle}"> <f:validator validatorId="nomValidator"/> </h:inputText>
-            <h:commandButton value="Rechercher" action="#{catalogue.searchProduits}" />
+            <h:inputText value="#{catalogue.motcle}" styleClass="input-style"> <f:validator validatorId="nomValidator"/> </h:inputText>
+            <h:commandButton value="Rechercher" action="#{catalogue.searchProduits}" styleClass="button-style"/>
 
         </h:form>
     </div>
@@ -21,13 +22,13 @@
 
 
 
-
+    <h3>Afficher tous les produits</h3>
     <div class="centering">
         <div class="blur-background">
-            <h3>Afficher tous les produits</h3>
+
             <h:form>
-                <h:commandButton value="Afficher" action="#{catalogue.listProduits}" />
-                <h:commandButton value="Suppression D'un produit" action="page3" />
+                <h:commandButton value="Afficher" action="#{catalogue.listProduits}" styleClass="button-style"/>
+                <h:commandButton value="Suppression D'un produit" action="page3" styleClass="button-style"/>
             </h:form>
 
         </div>

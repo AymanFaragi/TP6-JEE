@@ -16,7 +16,7 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center ;
-    width: 300px;
+    width: 500px;
 }
 .input-style{
     background-color: #ffd2d2;
@@ -32,7 +32,7 @@ body {
 }
 
 .button-style{
-    margin-left: 10px;
+    margin: 10px;
     background-color: #ffd2d2;
     padding: 5px;
     border: #fa7272 solid;
