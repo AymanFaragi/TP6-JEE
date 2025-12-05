@@ -12,9 +12,9 @@
         <div class="blur-background">
             <h:form>
                 <h:outputLabel value="ID : "/>
-                <h:inputText value="#{catalogue.id}" styleClass="input-style"> <f:validator validatorId="nomValidator"/> </h:inputText> <br/>
+                <h:inputText value="#{catalogue.id}" styleClass="input-style"> </h:inputText> <br/>
                 <h:outputLabel value="Nouveau nom : "/>
-                <h:inputText value="#{catalogue.nom}" styleClass="input-style"/><br/>
+                <h:inputText value="#{catalogue.nom}" styleClass="input-style"><f:validator validatorId="nomValidator"/> </h:inputText> <br/>
                 <h:outputLabel value="Nouveau prix : "/>
                 <h:inputText value="#{catalogue.prix}" styleClass="input-style"> <f:validateDoubleRange minimum="0" /></h:inputText><br/>
                 <h:commandButton value="Mettre a jour" action="#{catalogue.updateProduit}" styleClass="button-style"/>
